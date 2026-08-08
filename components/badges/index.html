@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verified Blue Badge | Web Dev Toolkit</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="verified-badge.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="brand-icon"><i class="fas fa-certificate" style="color:#fff;"></i></div>
+        <div>
+          <h1>Verified Blue Badge Component</h1>
+          <p>Web Dev Toolkit • components/badges/</p>
+        </div>
+      </div>
+      <div>
+        <span class="creator-verified-pill"><i class="fas fa-circle-check"></i> components/badges/verified-badge.md</span>
+      </div>
+    </header>
+
+    <!-- Live Stage Showcase -->
+    <div class="badge-stage-container">
+      <div class="live-user-row">
+        <div class="user-avatar">SA</div>
+        <div class="user-info">
+          <div class="user-name-group">
+            <span>Shariar Ahamed</span>
+            <span id="preview-badge-target">
+              <span class="badge-verified-blue" title="Verified Creator">
+                <i class="fas fa-circle-check"></i>
+              </span>
+            </span>
+          </div>
+          <span class="user-handle">@shariar_dev • Online Compiler</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Badge Switcher Grid -->
+    <div class="badges-interactive-grid">
+      <button class="badge-card-btn active" data-variant="official">
+        <span class="badge-preview-icon badge-verified-blue"><i class="fas fa-circle-check"></i></span>
+        <div class="badge-card-text">
+          <span class="badge-card-title">Official Twitter Blue</span>
+          <span class="badge-card-sub">স্ট্যান্ডার্ড #1D9BF0 কালার</span>
+        </div>
+      </button>
+
+      <button class="badge-card-btn" data-variant="pulse">
+        <span class="badge-preview-icon badge-verified-blue animate-pulse-subtle"><i class="fas fa-circle-check"></i></span>
+        <div class="badge-card-text">
+          <span class="badge-card-title">Animated Pulse Badge</span>
+          <span class="badge-card-sub">লিডারবোর্ড গ্লো পালস অ্যানিমেশন</span>
+        </div>
+      </button>
+
+      <button class="badge-card-btn" data-variant="gold">
+        <span class="badge-preview-icon badge-verified-gold"><i class="fas fa-circle-check"></i></span>
+        <div class="badge-card-text">
+          <span class="badge-card-title">Gold Organization</span>
+          <span class="badge-card-sub">অফিশিয়াল বিজনেস ব্যাজ (#E7A43B)</span>
+        </div>
+      </button>
+
+      <button class="badge-card-btn" data-variant="neon">
+        <span class="badge-preview-icon badge-verified-neon"><i class="fas fa-circle-check"></i></span>
+        <div class="badge-card-text">
+          <span class="badge-card-title">Cyberpunk Neon</span>
+          <span class="badge-card-sub">হাই-টেক গ্লো (#00FFCC)</span>
+        </div>
+      </button>
+
+      <button class="badge-card-btn" data-variant="pill">
+        <span class="badge-preview-icon"><span class="creator-verified-pill"><i class="fas fa-circle-check"></i></span></span>
+        <div class="badge-card-text">
+          <span class="badge-card-title">Creator Pill Badge</span>
+          <span class="badge-card-sub">ট্যাগ সহ ফ্রস্টেড গ্লাস পিল</span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Documentation Cards Grid (from verified-badge.md) -->
+    <div class="doc-section-grid">
+      <!-- 1. Official Blue Tick Card -->
+      <div class="card">
+        <h2 class="card-title">
+          <span>🔵</span> ১. অফিশিয়াল ব্লু টিক মার্ক (Official Blue Badge)
+        </h2>
+        <p class="card-description">
+          এটি মূলত ফন্ট অসাম (Font Awesome)-এর বৃত্তাকার চেক মার্ক আইকন এবং টুইটার/এক্স-এর অফিশিয়াল কালার কোডের সমন্বয়ে তৈরি।
+        </p>
+
+        <ul class="spec-list">
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div><strong>আইকন ক্লাস:</strong> <code>fas fa-circle-check</code></div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div><strong>কালার কোড:</strong> <code>#1D9BF0</code> (Official Twitter/X Blue)</div>
+          </li>
+        </ul>
+
+        <div class="code-box">
+          <div class="code-header">
+            <span>React / JSX Snippet</span>
+            <button class="copy-btn" onclick="copySnippet('code-jsx', 'React Blue Badge')">📋 Copy</button>
+          </div>
+          <pre><code id="code-jsx">&lt;span style={{ color: '#1D9BF0' }} title="Verified Creator"&gt;
+  &lt;i className="fas fa-circle-check"&gt;&lt;/i&gt;
+&lt;/span&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- 2. Animated Pulse Badge Card -->
+      <div class="card">
+        <h2 class="card-title">
+          <span>✨</span> ২. অ্যানিমেটেড পালস ব্যাজ (Animated Pulse Badge)
+        </h2>
+        <p class="card-description">
+          লিডারবোর্ড বা বিশেষ প্রোফাইল পেজে ব্যাজটিকে আরও আকর্ষণীয় ও জীবন্ত করতে <code>animate-pulse</code> ক্লাস বা সিএসএস কিফ্রেম যুক্ত করা হয়।
+        </p>
+
+        <ul class="spec-list">
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div><strong>অ্যানিমেশন:</strong> <code>animate-pulse</code> বা <code>pulseSubtle</code></div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div><strong>ব্যবহার:</strong> লিডারবোর্ডের শীর্ষ ব্যবহারকারী ও ভেরিফাইড ক্রিয়েটর।</div>
+          </li>
+        </ul>
+
+        <div class="code-box">
+          <div class="code-header">
+            <span>Leaderboard Pulse Snippet</span>
+            <button class="copy-btn" onclick="copySnippet('code-pulse', 'Pulse Badge')">📋 Copy</button>
+          </div>
+          <pre><code id="code-pulse">&lt;span style={{ color: '#1D9BF0' }} title="Top Verified Creator"&gt;
+  &lt;i className="fas fa-circle-check animate-pulse"&gt;&lt;/i&gt;
+&lt;/span&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- 3. Font Awesome CDN Setup Card -->
+      <div class="card" style="grid-column: 1 / -1;">
+        <h2 class="card-title">
+          <span>🌐</span> ৩. ফন্ট অসাম সিডিএন সেটআপ (Font Awesome CDN)
+        </h2>
+        <p class="card-description">
+          প্রজেক্টে এই আইকনটি কাজ করানোর জন্য <code>index.html</code> ফাইলের <code>&lt;head&gt;</code> ট্যাগের ভেতরে ফন্ট অসামের সিডিএন লিংকটি যুক্ত করতে হবে:
+        </p>
+
+        <div class="code-box">
+          <div class="code-header">
+            <span>HTML &lt;head&gt; CDN Link</span>
+            <button class="copy-btn" onclick="copySnippet('code-cdn', 'Font Awesome CDN')">📋 Copy</button>
+          </div>
+          <pre><code id="code-cdn">&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast">📋 কোড কপি হয়েছে!</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
