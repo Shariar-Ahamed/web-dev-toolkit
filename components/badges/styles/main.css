@@ -169,11 +169,13 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: left;
+  color: var(--text-primary);
 }
 
 .badge-card-btn:hover {
   background: var(--bg-tertiary);
   border-color: var(--border-accent);
+  transform: translateY(-2px);
 }
 
 .badge-card-btn.active {
@@ -184,21 +186,29 @@ body {
 
 .badge-preview-icon {
   font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
 }
 
 .badge-card-text {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
 .badge-card-title {
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
 }
 
 .badge-card-sub {
-  font-size: 0.75rem;
-  color: var(--text-muted);
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-family: var(--font-bengali);
 }
 
 /* Documentation Cards */
