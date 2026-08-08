@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Interactive Effects | Web Dev Toolkit</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="brand-icon">⚡</div>
+        <div>
+          <h1>Mouse Interactive Effects</h1>
+          <p>Web Dev Toolkit • effects/mouse/</p>
+        </div>
+      </div>
+      <div>
+        <span class="canvas-badge">📂 effects/mouse/mouse-effects.md</span>
+      </div>
+    </header>
+
+    <!-- Interactive Live Preview Canvas -->
+    <div id="interactive-canvas-container">
+      <canvas id="mouse-canvas"></canvas>
+      <div class="canvas-overlay-banner">
+        <div class="canvas-badge" id="active-effect-name">
+          🌌 ১. গ্যালাক্সি ভর্টেক্স ইফেক্ট (Galaxy Vortex)
+        </div>
+        <div class="canvas-hint">
+          ✨ Move your mouse across this canvas to interact
+        </div>
+      </div>
+    </div>
+
+    <!-- Mode Switcher Tabs -->
+    <div class="effect-tabs">
+      <button class="tab-btn active" data-mode="galaxy">
+        <span class="tab-icon">🌌</span>
+        <div class="tab-meta">
+          <span>Galaxy Vortex</span>
+          <span class="tab-sub">গ্যালাক্সি ভর্টেক্স স্পাইরাল ইফেক্ট</span>
+        </div>
+      </button>
+
+      <button class="tab-btn" data-mode="sparkler">
+        <span class="tab-icon">🎆</span>
+        <div class="tab-meta">
+          <span>Sparkler Physics</span>
+          <span class="tab-sub">ফুলঝুরি গ্র্যাভিটি কণা ইফেক্ট</span>
+        </div>
+      </button>
+
+      <button class="tab-btn" data-mode="constellation">
+        <span class="tab-icon">🕸️</span>
+        <div class="tab-meta">
+          <span>Constellation Links</span>
+          <span class="tab-sub">কন্সটেলেশন দূরত্ব লাইন সংযোগ</span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Documentation Cards Grid (from mouse-effects.md) -->
+    <div class="doc-section-grid">
+      <!-- 1. Galaxy Vortex Effect Card -->
+      <div class="card effect-doc-detail" data-effect="galaxy" style="border-color: var(--accent-primary); box-shadow: var(--shadow-glow);">
+        <h2 class="card-title">
+          <span>🌌</span> ১. গ্যালাক্সি ভর্টেক্স ইফেক্ট (Galaxy Vortex Effect)
+        </h2>
+        <p class="card-description">
+          এই ইফেক্টটিতে মাউসের চারপাশে কণাগুলো চক্রাকারে ঘোরে এবং স্পাইরাল (Vortex) আকার ধারণ করে। কার্সরের খুব কাছাকাছি টাইট এলাকায় ঘূর্ণন সীমাবদ্ধ রাখা হয়েছে।
+        </p>
+
+        <ul class="spec-list">
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div><strong>ফাংশন নাম:</strong> <code>initGalaxy</code></div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div>
+              <strong>মাউস মুভমেন্ট লজিক:</strong> মাউসের পজিশনে কণাগুলো স্পন হয়। প্রতিটি কণার জন্য কোণ (<code>angle</code>) এবং ব্যাসার্ধ (<code>radius</code>) বৃদ্ধি করে ঘূর্ণন তৈরি করা হয়:
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div>
+              <strong>কালার প্যালেট (Colors):</strong>
+              <div class="color-swatches-row">
+                <span class="color-chip"><span class="color-dot" style="background:#6366f1;"></span>বেগুনী (Indigo)</span>
+                <span class="color-chip"><span class="color-dot" style="background:#a855f7;"></span>বেগুনি-গোলাপী (Purple)</span>
+                <span class="color-chip"><span class="color-dot" style="background:#22d3ee;"></span>সায়ান (Cyan)</span>
+                <span class="color-chip"><span class="color-dot" style="background:#08cb00;"></span>সবুজ (Green)</span>
+                <span class="color-chip"><span class="color-dot" style="background:#ff79c6;"></span>পিঙ্ক (Pink)</span>
+              </div>
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div><strong>সাইজ (Size):</strong> শুরুর সাইজ ০.৬ থেকে ২.১ পিক্সেল। প্রতি ফ্রেমে এটি ০.০১২ পিক্সেল করে সংকুচিত হয়।</div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div><strong>কণা উৎপাদনের হার:</strong> মাউস মুভমেন্টে প্রতি ফ্রেমে ২টি করে কণা তৈরি হয় এবং সর্বোচ্চ ১০০টি কণা ক্যানভাসে সক্রিয় থাকতে পারে।</div>
+          </li>
+        </ul>
+
+        <div class="code-box">
+          <div class="code-header">
+            <span>JavaScript Implementation</span>
+            <button class="copy-btn" onclick="copySnippet('code-galaxy', 'Galaxy Vortex')">📋 Copy</button>
+          </div>
+          <pre><code id="code-galaxy">// Galaxy Vortex Physics Loop (Compact Spread)
+this.angle += this.spinSpeed;
+this.radius += this.radiusExpansion; // 0.15 to 0.50
+this.x = this.startX + Math.cos(this.angle) * this.radius;
+this.y = this.startY + Math.sin(this.angle) * this.radius;
+this.size = Math.max(0.1, this.size - 0.012);</code></pre>
+        </div>
+      </div>
+
+      <!-- 2. Sparkler Physics Effect Card -->
+      <div class="card effect-doc-detail" data-effect="sparkler">
+        <h2 class="card-title">
+          <span>🎆</span> ২. ফুলঝুরি বা স্পার্কলার ইফেক্ট (Sparkler Physics Effect)
+        </h2>
+        <p class="card-description">
+          এই ইফেক্টটিতে মাউস কার্সর থেকে কণাগুলো স্পার্কের মতো বের হয়ে মৃদু গতিতে অভিকর্ষ বা গ্র্যাভিটির টানে নিচের দিকে ঝরে পড়ে।
+        </p>
+
+        <ul class="spec-list">
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div><strong>ফাংশন নাম:</strong> <code>initSparkler</code></div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div>
+              <strong>মাউস মুভমেন্ট লজিক:</strong> কণাগুলো কার্সরের কাছাকাছি মৃদু গতিতে ছড়িয়ে পড়ে এবং গ্র্যাভিটি ওয়াই-অক্ষের গতি বৃদ্ধি করে নিচের দিকে টানে:
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div>
+              <strong>কালার প্যালেট (Colors):</strong>
+              <div class="color-swatches-row">
+                <span class="color-chip"><span class="color-dot" style="background:#fbbf24;"></span>সোনালী (Amber)</span>
+                <span class="color-chip"><span class="color-dot" style="background:#fb923c;"></span>কমলা (Orange)</span>
+                <span class="color-chip"><span class="color-dot" style="background:#f43f5e;"></span>লাল (Rose)</span>
+                <span class="color-chip"><span class="color-dot" style="background:#a855f7;"></span>বেগুনি (Purple)</span>
+                <span class="color-chip"><span class="color-dot" style="background:#22d3ee;"></span>সায়ান (Cyan)</span>
+              </div>
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div><strong>সাইজ (Size):</strong> শুরুর সাইজ ০.৬ থেকে ২.৪ পিক্সেল। প্রতি ফ্রেমে এটি ০.০২ পিক্সেল করে ছোট হতে থাকে।</div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div><strong>কণা উৎপাদনের হার:</strong> মাউস মুভমেন্টে প্রতি ফ্রেমে ২টি করে কণা তৈরি হয় এবং সর্বোচ্চ ৮০টি কণা ক্যানভাসে সক্রিয় থাকতে পারে।</div>
+          </li>
+        </ul>
+
+        <div class="code-box">
+          <div class="code-header">
+            <span>JavaScript Implementation</span>
+            <button class="copy-btn" onclick="copySnippet('code-sparkler', 'Sparkler Physics')">📋 Copy</button>
+          </div>
+          <pre><code id="code-sparkler">// Sparkler Gravity Physics (Soft Trail)
+this.speedY += this.gravity; // gravity = 0.035
+this.x += this.speedX;       // initial speed = 0.4 to 2.2
+this.y += this.speedY;
+this.size = Math.max(0.1, this.size - 0.02);</code></pre>
+        </div>
+      </div>
+
+      <!-- 3. Constellation Links Effect Card -->
+      <div class="card effect-doc-detail" data-effect="constellation" style="grid-column: 1 / -1;">
+        <h2 class="card-title">
+          <span>🕸️</span> ৩. কন্সটেলেশন লিংক ইফেক্ট (Constellation Links Effect)
+        </h2>
+        <p class="card-description">
+          এই ইফেক্টটিতে মাউস কার্সর থেকে ডট তৈরি হয়ে ধীরে ধীরে চারপাশে থাকে এবং নির্দিষ্ট ছোট দূরত্বের মধ্যে থাকলে তাদের মধ্যে সংযোগ লাইন তৈরি হয়।
+        </p>
+
+        <ul class="spec-list">
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div><strong>ফাংশন নাম:</strong> <code>initConstellation</code></div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div>
+              <strong>মাউস মুভমেন্ট লজিক:</strong> মাউস পজিশন থেকে কণাগুলো মৃদু গতিতে ছড়ায়। দুটি বিন্দুর মধ্যবর্তী দূরত্ব ৪৫ পিক্সেলের কম হলে তাদের মধ্যে একটি সূক্ষ্ম লাইনে সংযোগ স্থাপন করা হয়:
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div>
+              <strong>কালার প্যালেট (Colors):</strong>
+              <div class="color-swatches-row">
+                <span class="color-chip"><span class="color-dot" style="background:#6366f1;"></span>বেগুনী (Indigo)</span>
+                <span class="color-chip"><span class="color-dot" style="background:#a855f7;"></span>বেগুনি-গোলাপী (Purple)</span>
+                <span class="color-chip"><span class="color-dot" style="background:#22d3ee;"></span>সায়ান (Cyan)</span>
+                <span class="color-chip"><span class="color-dot" style="background:#08cb00;"></span>সবুজ (Green)</span>
+                <span class="color-chip"><span class="color-dot" style="background:#ff79c6;"></span>পিঙ্ক (Pink)</span>
+              </div>
+            </div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div><strong>সাইজ (Size):</strong> কণাগুলোর সাইজ ০.৭ থেকে ২.১ পিক্সেল।</div>
+          </li>
+          <li class="spec-item">
+            <span class="spec-bullet">✦</span>
+            <div><strong>কণা উৎপাদনের হার:</strong> মাউস মুভমেন্টে প্রতি ফ্রেমে ২টি করে কণা তৈরি হয় এবং সর্বোচ্চ ৬০টি কণা ক্যানভাসে সক্রিয় থাকতে পারে।</div>
+          </li>
+        </ul>
+
+        <div class="code-box">
+          <div class="code-header">
+            <span>JavaScript Implementation</span>
+            <button class="copy-btn" onclick="copySnippet('code-constellation', 'Constellation Links')">📋 Copy</button>
+          </div>
+          <pre><code id="code-constellation">// Constellation Distance Proximity Line Connection (45px Radius)
+const maxDistance = 45;
+if (dist < maxDistance) {
+  const avgAlpha = (particles[i].alpha + particles[j].alpha) / 2;
+  const lineAlpha = (1 - dist / maxDistance) * avgAlpha * 0.4;
+  ctx.strokeStyle = `rgba(99, 102, 241, ${lineAlpha})`;
+  ctx.beginPath();
+  ctx.moveTo(particles[i].x, particles[i].y);
+  ctx.lineTo(particles[j].x, particles[j].y);
+  ctx.stroke();
+}</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repository Structure View (README.md alignment) -->
+    <div class="card">
+      <h2 class="card-title">📁 Repository Structure (web-dev-toolkit)</h2>
+      <p class="card-description">
+        ফোল্ডার স্ট্রাকচার অনুযায়ী এই প্রজেক্টের সমস্ত ফাইল <code>effects/mouse/</code> ফোল্ডারে সুবিন্যস্ত রয়েছে:
+      </p>
+      <pre class="file-tree">web-dev-toolkit/
+├── README.md
+│
+├── effects/
+│   └── mouse/
+│       ├── styles/
+│       │   └── main.css       <-- (Design System & Tokens)
+│       ├── app.js             <-- (Mouse Effects Canvas Engine)
+│       ├── index.html         <-- (Interactive Showcase & Notes Portal)
+│       ├── mouse-effects.js   <-- (Reusable ES6 Class Modules)
+│       └── mouse-effects.md   <-- (Documented Notes & Formulas)
+│
+├── components/
+├── animations/
+├── snippets/
+├── canvas/
+├── svg/
+└── utilities/</pre>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast">📋 কোড কপি হয়েছে!</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
