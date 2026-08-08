@@ -10,13 +10,6 @@
   justify-content: center;
   vertical-align: middle;
   font-size: 1rem;
-  transition: transform 0.2s ease, filter 0.2s ease;
-  cursor: pointer;
-}
-
-.badge-verified-blue:hover {
-  transform: scale(1.15);
-  filter: drop-shadow(0 0 6px rgba(29, 155, 240, 0.6));
 }
 
 /* Gold / Official Organization Verified */
@@ -27,13 +20,6 @@
   justify-content: center;
   vertical-align: middle;
   font-size: 1rem;
-  transition: transform 0.2s ease;
-  cursor: pointer;
-}
-
-.badge-verified-gold:hover {
-  transform: scale(1.15);
-  filter: drop-shadow(0 0 6px rgba(231, 164, 59, 0.6));
 }
 
 /* Cyberpunk Neon Glow */
