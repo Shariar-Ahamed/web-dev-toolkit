@@ -69,3 +69,6 @@ A curated collection of canvas-based particle physics and trail effects triggere
   * পিঙ্ক (Pink): `rgba(255, 121, 198, alpha)`
 * **সাইজ (Size):** কণাগুলোর সাইজ ০.৭ থেকে ২.১ পিক্সেল।
 * **কণা উৎপাদনের হার:** মাউস মুভমেন্টে প্রতি ফ্রেমে ২টি করে কণা তৈরি হয় এবং সর্বোচ্চ ৬০টি কণা ক্যানভাসে সক্রিয় থাকতে পারে।
+
+
+---
