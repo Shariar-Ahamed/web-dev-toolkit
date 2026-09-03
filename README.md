@@ -97,3 +97,5 @@ Open any module's documentation or interactive portal directly in your browser:
   ```javascript
   import { GalaxyVortex, SparklerPhysics, ConstellationLinks } from './effects/mouse/mouse-effects.js';
   ```
+
+  ---
