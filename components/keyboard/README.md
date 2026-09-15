@@ -7,7 +7,7 @@
 ## 📁 ক্লিন ফাইল স্ট্রাকচার (Clean Structure)
 
 ```text
-mac-keyboard-component/
+components/keyboard/
 ├── components/
 │   └── ui/
 │       └── keyboard.jsx      # ✅ Tested & Perfected JSX component (Zero external icon dependency)
@@ -37,14 +37,14 @@ npm install framer-motion clsx tailwind-merge
 ### ধাপ ২: ফাইলগুলো আপনার প্রজেক্টে কপি করুন
 
 1. **অডিও ফাইল:**
-   - `mac-keyboard-component/public/sounds/` ফোল্ডারটিকে আপনার প্রজেক্টের রুট ডিরেক্টরির `public/sounds/`-এ পেস্ট করুন।
+   - `components/keyboard/public/sounds/` ফোল্ডারটিকে আপনার প্রজেক্টের রুট ডিরেক্টরির `public/sounds/`-এ পেস্ট করুন।
    - নিশ্চিত করুন `public/sounds/sound.ogg` এবং `public/sounds/config.json` ফাইল দুটি রয়েছে।
 
 2. **ইউটিলিটি ফাইল:**
-   - `mac-keyboard-component/lib/utils.js` ফাইলটিকে আপনার প্রজেক্টের `src/lib/utils.js`-এ পেস্ট করুন।
+   - `components/keyboard/lib/utils.js` ফাইলটিকে আপনার প্রজেক্টের `src/lib/utils.js`-এ পেস্ট করুন।
 
 3. **কিবোর্ড কম্পোনেন্ট:**
-   - `mac-keyboard-component/components/ui/keyboard.jsx` ফাইলটিকে আপনার প্রজেক্টের `src/components/ui/keyboard.jsx`-এ পেস্ট করুন।
+   - `components/keyboard/components/ui/keyboard.jsx` ফাইলটিকে আপনার প্রজেক্টের `src/components/ui/keyboard.jsx`-এ পেস্ট করুন।
 
 ---
 
